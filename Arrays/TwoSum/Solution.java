@@ -1,0 +1,14 @@
+
+public class Solution {
+
+    public int[] sum(int[] num, int target) {
+        for (int i = 0; i < num.length; i++) {
+            for (int j = i + 1; j < num.length; j++) {
+                if (num[i] + num[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        return new int[]{};
+    }
+}

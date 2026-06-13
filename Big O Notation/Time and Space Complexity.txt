@@ -1,0 +1,24 @@
+
+Arrays
+Linked Lists
+Stacks
+Queues
+Hash Tables
+
+Time complexity describes how an algorithm’s running time grows as the input size grows, and space complexity describes how its memory usage grows as the input size grows.
+
+Big O notation is the way we usually express both, as an upper bound on growth rate rather than an exact runtime or memory amount.
+it is basically a way to calculate that how an algorithm will perform
+Big O tells you how an algorithm scales in the worst case or as the input gets very large. 
+
+Big o Notation
+ IS Check the performance of the algorithm
+O(1), O(n), O(n2)
+speed = O(1)> O(n)> O(n2)
+
+O(Log n) but it slows down as the input size grows
+an application with logarithmic time(Binary Search) is much more scalable than an application with linear time(linear search)
+
+O(2n) but it gets faster as the input size grows
+
+
