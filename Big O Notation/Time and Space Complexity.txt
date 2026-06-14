@@ -1,24 +1,201 @@
-
-Arrays
-Linked Lists
-Stacks
-Queues
-Hash Tables
-
-Time complexity describes how an algorithm’s running time grows as the input size grows, and space complexity describes how its memory usage grows as the input size grows.
-
+* Big Order Notation
+Big O is used in computer science to classify algorithms 
+by how their execution time or memory space requirements 
+grow relative to the size of the input (often denoted as n). 
+It describes the "worst-case scenario" upper bound of this growth.
+Big o Notation
+IS Check the performance of the algorithm
+O(1), O(n), O(n2)
+speed = O(1)> O(n)> O(n2)
+O(2n) but it gets faster as the input size grows
 Big O notation is the way we usually express both, as an upper bound on growth rate rather than an exact runtime or memory amount.
 it is basically a way to calculate that how an algorithm will perform
 Big O tells you how an algorithm scales in the worst case or as the input gets very large. 
-
-Big o Notation
- IS Check the performance of the algorithm
-O(1), O(n), O(n2)
-speed = O(1)> O(n)> O(n2)
-
 O(Log n) but it slows down as the input size grows
 an application with logarithmic time(Binary Search) is much more scalable than an application with linear time(linear search)
 
-O(2n) but it gets faster as the input size grows
 
 
+* What is Time Complexity?
+Imagine you have a list of names.
+Time Complexity answers:
+"If the input size gets bigger, how much more work does my algorithm have to do?"
+It does NOT measure actual seconds.
+Instead, it measures how the work grows.
+For example:
+for(int i = 0; i < n; i++) {
+    System.out.println(i);
+}
+If:
+n = 10 → 10 operations
+n = 100 → 100 operations
+n = 1000 → 1000 operations
+The work grows proportionally with n.
+Time Complexity = O(n)
+
+
+
+* What is Space Complexity?
+Space Complexity answers:
+"As the input grows, how much extra memory does my algorithm need?"
+Example:
+int[] copy = new int[n];
+If:
+n = 10 → 10 spaces
+n = 100 → 100 spaces
+n = 1000 → 1000 spaces
+Extra memory grows with n.
+Space Complexity = O(n)
+
+
+
+* Why Do We Use Big O?
+Different computers have different speeds.
+Instead of saying:
+Algorithm A = 2 seconds
+Algorithm B = 5 seconds
+We say:
+Algorithm A = O(n)
+Algorithm B = O(n²)
+because Big O works on every computer.
+It tells us how well an algorithm scales.
+
+
+
+* Think of Big O Like This
+Imagine you're searching for a friend in a stadium.
+* O(1)
+You already know the exact seat.
+Walk directly there.
+1 step
+No matter if there are:
+100 people
+1 million people
+Still:
+O(1)
+Best possible complexity.
+
+
+
+* O(n) — Linear Time
+You may have to check everyone.
+Person 1?
+Person 2?
+Person 3?
+...
+If the crowd doubles, your work doubles.
+Examples:
+Linear Search
+Traversing an Array
+Traversing a Linked List
+100 people → 100 checks
+1000 people → 1000 checks
+
+
+
+* O(log n) — Logarithmic Time
+This is where many beginners get confused.
+Think Binary Search.
+Suppose you're finding a word in a dictionary.
+Would you start from page 1?
+No.
+You open in the middle.
+Then:
+Too high?
+Go left half.
+Too low?
+Go right half.
+Each step removes HALF the remaining data.
+Example:
+1000 elements
+1000 → 500
+500 → 250
+250 → 125
+125 → 62
+62 → 31
+31 → 15
+15 → 7
+7 → 3
+3 → 1
+Only about 10 checks.
+That's why Binary Search is powerful.
+O(log n) is better than O(n)
+
+
+
+* O(n²) — Quadratic Time
+Usually caused by nested loops.
+for(int i = 0; i < n; i++) {
+    for(int j = 0; j < n; j++) {
+        // work
+    }
+}
+If:
+n = 10  → 100 operations
+n = 100 → 10,000 operations
+n = 1000 → 1,000,000 operations
+Growth becomes huge.
+Examples:
+Bubble Sort
+Selection Sort
+Comparing every element with every other element
+
+
+
+* O(n³)
+Triple nested loops.
+for(...)
+  for(...)
+    for(...)
+Example:
+n = 100
+100 × 100 × 100
+= 1,000,000 operations
+Very expensive.
+
+
+
+* O(2ⁿ) — Exponential Time
+✅ O(2ⁿ)
+And it gets MUCH WORSE as input grows.
+Example:
+n = 5  → 32
+n = 10 → 1024
+n = 20 → 1,048,576
+Common in:
+Brute-force recursion
+Generating all subsets
+
+
+
+* O(n!)
+Factorial Time
+The worst common complexity.
+Example:
+5! = 120
+10! = 3,628,800
+15! = 1,307,674,368,000
+Examples:
+Permutations
+Traveling Salesman brute force
+
+
+
+* Complexity Ranking (Fastest → Slowest)
+O(1)
+↓
+O(log n)
+↓
+O(n)
+↓
+O(n log n)
+↓
+O(n²)
+↓
+O(n³)
+↓
+O(2ⁿ)
+↓
+O(n!)
+Remember:
+Smaller growth = Better scalability
